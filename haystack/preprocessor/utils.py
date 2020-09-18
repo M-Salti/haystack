@@ -54,7 +54,7 @@ def eval_data_from_file(filename: str) -> Tuple[List[Document], List[Label]]:
                                 is_correct_document=True,
                                 document_id=cur_doc.id,
                                 offset_start_in_doc=answer["answer_start"],
-                                no_answer=qa["is_impossible"],
+                                no_answer=False,
                                 origin="gold_label",
                                 )
                             labels.append(label)
@@ -66,7 +66,7 @@ def eval_data_from_file(filename: str) -> Tuple[List[Document], List[Label]]:
                             is_correct_document=True,
                             document_id=cur_doc.id,
                             offset_start_in_doc=0,
-                            no_answer=qa["is_impossible"],
+                            no_answer=False,
                             origin="gold_label",
                         )
                         labels.append(label)
